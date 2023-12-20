@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, catchError, throwError } from 'rxjs';
+import { Observable } from 'rxjs';
 
 export interface Posts {
   userId: number;
@@ -18,11 +18,6 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   getPosts(): Observable<Posts[]> {
-    return this.http.get<Posts[]>(this.apiUrl).pipe(
-      catchError(error => {
-        console.error('Error occurred while fetching posts:', error);
-        return throwError(error);
-      })
-    );
+    return this.http.get<Posts[]>(this.apiUrl);
   }
 }
