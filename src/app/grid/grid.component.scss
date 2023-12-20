@@ -1,10 +1,24 @@
+$grid-gap: 1rem;  // Gap between squares
+$padding: 1rem;       // Margin of the grid container
+$number-of-squares-per-row: 10;
+
+// Total horizontal space taken by gaps and margins
+$total-horizontal-space: ($grid-gap * ($number-of-squares-per-row - 1)) + (2 * $padding);
+
+body {
+  background-image: linear-gradient(to bottom right, white, darkgrey);
+}
+
 .grid {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
+  width: 100vw;
+  grid-template-columns: repeat($number-of-squares-per-row, 1fr);
   grid-template-rows: repeat(10, 1fr);
-  grid-gap: 1.25rem;
-  margin: 2rem;
+  grid-gap: $grid-gap;
+  box-sizing: border-box;
+  background-image: linear-gradient(to bottom right, white, darkgrey);
 }
+
 
 @keyframes fadeInUp {
   from {
@@ -19,11 +33,12 @@
 
 .square-item {
   animation: fadeInUp 0.5s ease-out forwards;
+
   opacity: 0;
 
   @for $i from 1 through 100 {
     &:nth-child(#{$i}) {
-      animation-delay: 0.05s * $i;
+      animation-delay: 0.025s * $i;
     }
   }
 }

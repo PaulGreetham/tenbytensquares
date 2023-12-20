@@ -26,4 +26,14 @@ export class SquareComponent {
   toggleDisplay() {
     this.displayType = (this.displayType + 1) % 4;
   }
+
+  get currentClass(): string {
+    switch (this.displayType) {
+      case 0: return 'title';
+      case 1: return 'user-id';
+      case 2: return 'id';
+      case 3: return 'body';
+      default: return '';
+    }
+  }
 }

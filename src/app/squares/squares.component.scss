@@ -1,17 +1,76 @@
+$grid-gap: 1.25rem;  // Gap between squares
+$margin: 2rem;       // Margin of the grid container
+$number-of-squares-per-row: 10;
+
+// Total horizontal space taken by gaps and margins
+$total-horizontal-space: ($grid-gap * ($number-of-squares-per-row - 1)) + (2 * $margin);
+
 .square {
-  border: 1px solid black;
+  font-size: x-small;
+  border: 0.5px solid gray;
   background-color: white;
-  padding: auto;
-  height: 7rem;
+  padding: 0.25rem;
+  box-sizing: border-box;
+  height: calc((100vw - #{$total-horizontal-space}) / $number-of-squares-per-row);
   width: 100%;
+  overflow: auto;
+
   text-align: center;
   cursor: pointer;
-  overflow: auto;
   transition: 0.5s;
 
   &:hover {
-    z-index: 100;
-    transform: scale(1.05);
+    transform: scale(1.1);
+    transition: 0.5s;
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: lightgray;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: darkgrey;
+  }
+
+  &.title {
+    font-size: small;
+    transition: 0.5s;
+  }
+
+  &.user-id {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: x-large;
+    color: white;
+    background-color: navy;
+    transition: 0.5s;
+  }
+
+  &.id {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: x-large;
+    color: white;
+    background-color: darkgreen;
+    transition: 0.5s;
+  }
+
+  &.body {
+    font-size: x-small;
+    color: white;
+    background-color: darkred;
     transition: 0.5s;
   }
 }
