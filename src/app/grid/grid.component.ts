@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { SquareComponent } from '../squares/squares.component';
+import { Posts } from '../data.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-grid',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, SquareComponent],
   templateUrl: './grid.component.html',
-  styleUrl: './grid.component.scss'
+  styleUrls: ['./grid.component.scss']
 })
 export class GridComponent {
-
+  @Input() posts: Posts[] = [];
 }
