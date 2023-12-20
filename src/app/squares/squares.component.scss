@@ -1,6 +1,21 @@
 .square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   border: 1px solid black;
-  padding: 10px;
+  background-color: white;
+  padding: auto;
+  height: 7rem;
+  width: 100%;
   text-align: center;
   cursor: pointer;
+  transition: 0.5s;
+  overflow: auto;
+
+  &:hover {
+    z-index: 100;
+    transform: scale(1.1);
+    transition: 0.5s;
+  }
 }
