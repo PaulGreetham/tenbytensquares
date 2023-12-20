@@ -5,3 +5,25 @@
   grid-gap: 1.25rem;
   margin: 2rem;
 }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.square-item {
+  animation: fadeInUp 0.5s ease-out forwards;
+  opacity: 0;
+
+  @for $i from 1 through 100 {
+    &:nth-child(#{$i}) {
+      animation-delay: 0.05s * $i;
+    }
+  }
+}
