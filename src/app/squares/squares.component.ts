@@ -14,12 +14,16 @@ export class SquareComponent {
   displayType = 0;
 
   get displayText(): string {
-    if (this.displayType === 0) return this.post?.title;
-    if (this.displayType === 1) return `${this.post?.userId}`;
-    return `${this.post?.id}`;
+    switch (this.displayType) {
+      case 0: return this.post?.title;
+      case 1: return `${this.post?.userId}`;
+      case 2: return `${this.post?.id}`;
+      case 3: return `${this.post?.body}`;
+      default: return '';
+    }
   }
 
   toggleDisplay() {
-    this.displayType = (this.displayType + 1) % 3;
+    this.displayType = (this.displayType + 1) % 4; // Cycle through 0, 1, 2, and 3
   }
 }
