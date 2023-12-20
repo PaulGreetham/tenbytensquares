@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { DataService } from './data.service';
+import { DataService, Posts } from './data.service';
 import { GridComponent } from './grid/grid.component';
 import { SquaresComponent } from './squares/squares.component';
 
@@ -18,10 +18,9 @@ import { SquaresComponent } from './squares/squares.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'tenbytensquares';
-  posts: any = [];
+  posts: Posts[] = [];
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService) {}
 
   ngOnInit() {
     this.dataService.getPosts().subscribe(data => {
