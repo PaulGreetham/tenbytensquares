@@ -1,12 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Posts } from '../data.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-squares',
+  selector: 'app-square',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './squares.component.html',
-  styleUrl: './squares.component.scss'
+  styleUrls: ['./squares.component.scss']
 })
-export class SquaresComponent {
+export class SquareComponent {
+  @Input() post!: Posts;
+  displayType = 0;
 
+  get displayText(): string {
+    if (this.displayType === 0) return this.post?.title;
+    if (this.displayType === 1) return `${this.post?.userId}`;
+    return `${this.post?.id}`;
+  }
+
+  toggleDisplay() {
+    this.displayType = (this.displayType + 1) % 3;
+  }
 }

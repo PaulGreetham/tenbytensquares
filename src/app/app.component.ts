@@ -1,19 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
 import { DataService, Posts } from './data.service';
 import { GridComponent } from './grid/grid.component';
-import { SquaresComponent } from './squares/squares.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    CommonModule,
-    RouterOutlet,
-    GridComponent,
-    SquaresComponent,
-  ],
+  imports: [GridComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
