@@ -24,6 +24,6 @@ export class SquareComponent {
   }
 
   toggleDisplay() {
-    this.displayType = (this.displayType + 1) % 4; // Cycle through 0, 1, 2, and 3
+    this.displayType = (this.displayType + 1) % 4;
   }
 }
