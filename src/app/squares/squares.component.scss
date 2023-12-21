@@ -8,7 +8,7 @@ $total-horizontal-space: ($grid-gap * ($number-of-squares-per-row - 1)) + (2 * $
 .square {
   font-size: x-small;
   border: 0.5px solid gray;
-  background-color: white;
+  background-color: rgb(240, 240, 240);
   padding: 0.25rem;
   box-sizing: border-box;
   height: calc((100vw - #{$total-horizontal-space}) / $number-of-squares-per-row);
@@ -52,7 +52,7 @@ $total-horizontal-space: ($grid-gap * ($number-of-squares-per-row - 1)) + (2 * $
 
     font-size: x-large;
     color: white;
-    background-color: navy;
+    background-color: rgb(60, 72, 107);
     transition: 0.5s;
   }
 
@@ -63,14 +63,14 @@ $total-horizontal-space: ($grid-gap * ($number-of-squares-per-row - 1)) + (2 * $
 
     font-size: x-large;
     color: white;
-    background-color: darkgreen;
+    background-color: rgb(249, 217, 73);
     transition: 0.5s;
   }
 
   &.body {
     font-size: x-small;
     color: white;
-    background-color: darkred;
+    background-color: rgb(244, 80, 80);
     transition: 0.5s;
   }
 }
