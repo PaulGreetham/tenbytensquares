@@ -2,7 +2,6 @@
 
 .square {
   font-size: $font-size-small;
-  border: 0.5px solid $border-color;
   background-color: $fourth-color;
   padding: $padding-small;
   box-sizing: border-box;
@@ -37,6 +36,8 @@
 
   &.title {
     font-size: $font-size-small;
+    color: $neutral-color;
+    background-color: $first-color;
     transition: $standard-transition;
   }
 
@@ -46,8 +47,8 @@
     align-items: center;
 
     font-size: $font-size-large;
-    color: $neutral-color;
-    background-color: $first-color;
+    color: $dark-color;
+    background-color: $second-color;
     transition: $standard-transition;
   }
 
@@ -58,14 +59,14 @@
 
     font-size: $font-size-large;
     color: $neutral-color;
-    background-color: $second-color;
+    background-color: $third-color;
     transition: $standard-transition;
   }
 
   &.body {
     font-size: $font-size-x-small;
     color: $neutral-color;
-    background-color: $third-color;
+    background-color: $fourth-color;
     transition: $standard-transition;
   }
 }

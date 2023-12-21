@@ -20,7 +20,7 @@
 }
 
 .square-item {
-  @include square-item-animation('fadeInUp', 0.5s); // Use mixin for animation
+  @include square-item-animation('fadeInUp', $standard-transition);
 
   @for $i from 1 through 100 {
     &:nth-child(#{$i}) {
