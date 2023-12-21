@@ -1,22 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService, Posts } from './data.service';
-import { GridComponent } from './grid/grid.component';
+import { DataService } from './data.service';
+import { CommonModule } from '@angular/common';
+import { GridComponent } from "./grid/grid.component"; // Import CommonModule
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [GridComponent],
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    standalone: true,
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    imports: [CommonModule, GridComponent]
 })
 export class AppComponent implements OnInit {
-  posts: Posts[] = [];
 
-  constructor(private dataService: DataService) {}
+  constructor(public dataService: DataService) {}
 
   ngOnInit() {
-    this.dataService.getPosts().subscribe(data => {
-      this.posts = data;
-    });
+    this.dataService.loadPosts();
   }
 }

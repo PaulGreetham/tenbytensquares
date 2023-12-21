@@ -31,7 +31,7 @@ $standard-transition: 0.5s;
 // Mixins
 @mixin square-dimensions {
   width: 100%;
-  height: 100%;
+  height: 8rem;
 }
 
 @mixin grid-container-style {

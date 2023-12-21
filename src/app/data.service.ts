@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 
 export interface Posts {
   userId: number;
@@ -14,10 +14,14 @@ export interface Posts {
 })
 export class DataService {
   private apiUrl = 'https://jsonplaceholder.typicode.com/posts';
+  private postsSubject = new BehaviorSubject<Posts[]>([]);
+  posts$ = this.postsSubject.asObservable();
 
   constructor(private http: HttpClient) { }
 
-  getPosts(): Observable<Posts[]> {
-    return this.http.get<Posts[]>(this.apiUrl);
+  loadPosts() {
+    this.http.get<Posts[]>(this.apiUrl).pipe(
+      tap(posts => this.postsSubject.next(posts))
+    ).subscribe();
   }
 }

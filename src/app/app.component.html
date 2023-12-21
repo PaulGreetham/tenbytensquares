@@ -1,1 +1,3 @@
-<app-grid [posts]="posts"></app-grid>
+<ng-container *ngIf="dataService.posts$ | async as posts">
+  <app-grid [posts]="posts"></app-grid>
+</ng-container>
