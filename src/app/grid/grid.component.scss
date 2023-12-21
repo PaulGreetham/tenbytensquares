@@ -1,11 +1,24 @@
 @import '../styles.lib';
 
-.grid-container {
-  @include grid-container-style;
+@mixin grid-container-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
 }
 
-.grid {
-  @include grid-style($number-of-squares-per-row, $grid-gap);
+@mixin grid-style($columns, $gap) {
+  display: grid;
+  grid-gap: $gap;
+  grid-template-columns: repeat($columns, 1fr);
+  padding: $padding-default;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@mixin square-item-animation($name, $duration) {
+  animation: $name $duration ease-out forwards;
+  opacity: 0;
 }
 
 @keyframes fadeInUp {
@@ -17,6 +30,14 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.grid-container {
+  @include grid-container-style;
+}
+
+.grid {
+  @include grid-style($number-of-squares-per-row, $grid-gap);
 }
 
 .square-item {
