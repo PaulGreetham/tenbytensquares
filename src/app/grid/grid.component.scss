@@ -1,26 +1,5 @@
 @import '../styles.lib';
 
-@mixin grid-container-style {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-}
-
-@mixin grid-style($columns, $gap) {
-  display: grid;
-  grid-gap: $gap;
-  grid-template-columns: repeat($columns, 1fr);
-  padding: $padding-default;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-@mixin square-item-animation($name, $duration) {
-  animation: $name $duration ease-out forwards;
-  opacity: 0;
-}
-
 @keyframes fadeInUp {
   from {
     opacity: 0;

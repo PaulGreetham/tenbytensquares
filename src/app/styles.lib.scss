@@ -15,8 +15,9 @@ $third-color: rgb(238, 80, 7);
 $fourth-color: rgb(178, 39, 39);
 $neutral-color: rgb(255, 255, 255);
 $dark-color: rgb(36, 36, 36);
-$scrollbar-thumb-color: lightgray;
-$scrollbar-thumb-hover-color: darkgrey;
+$scrollbar-thumb-color: darkgrey;
+$scrollbar-thumb-background-color: #f1f1f1;
+$scrollbar-thumb-hover-color: lightgrey;
 
 // Spacing
 $grid-gap: 1.25rem;
@@ -27,6 +28,7 @@ $number-of-squares-per-row: 10;
 
 // Transitions & Animations
 $standard-transition: 0.5s;
+$scrollbar-width: 0.25rem;
 
 // Mixins
 @mixin square-dimensions {
