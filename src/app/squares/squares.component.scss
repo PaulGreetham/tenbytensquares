@@ -1,8 +1,6 @@
 @import '../styles.lib';
 
 .square {
-  font-size: $font-size-small;
-  background-color: $fourth-color;
   padding: $padding-small;
   box-sizing: border-box;
   overflow: auto;
@@ -18,21 +16,21 @@
     transition: $standard-transition;
   }
 
-  &::-webkit-scrollbar {
-    width: 4px;
-  }
+  // &::-webkit-scrollbar {
+  //   width: 4px;
+  // }
 
-  &::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
+  // &::-webkit-scrollbar-track {
+  //   background: #f1f1f1;
+  // }
 
-  &::-webkit-scrollbar-thumb {
-    background: lightgray;
-  }
+  // &::-webkit-scrollbar-thumb {
+  //   background: lightgray;
+  // }
 
-  &::-webkit-scrollbar-thumb:hover {
-    background: darkgrey;
-  }
+  // &::-webkit-scrollbar-thumb:hover {
+  //   background: darkgrey;
+  // }
 
   &.title {
     font-size: $font-size-small;
