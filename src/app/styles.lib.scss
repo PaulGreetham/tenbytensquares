@@ -1,0 +1,65 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+$font-family: 'Poppins', sans-serif;
+
+// Font sizes
+$font-size-large: x-large;
+$font-size-medium: large;
+$font-size-small: small;
+$font-size-x-small: x-small;
+
+// Color palette
+$first-color: rgb(60, 72, 107);
+$second-color: rgb(249, 217, 73);
+$third-color: rgb(244, 80, 80);
+$fourth-color: rgb(240, 240, 240);
+$neutral-color: rgb(255, 255, 255);
+$border-color: gray;
+$scrollbar-thumb-color: lightgray;
+$scrollbar-thumb-hover-color: darkgrey;
+
+// Spacing
+$grid-gap: 1.25rem;
+$margin-default: 2rem;
+$padding-small: 0.25rem;
+$padding-default: 1rem;
+$number-of-squares-per-row: 10;
+
+// Transitions & Amimations
+$standard-transition: 0.5s;
+
+// Calculations
+@function calculate-total-horizontal-space($gap, $margin-default, $number-of-squares) {
+  @return ($gap * ($number-of-squares - 1)) + (2 * $margin-default);
+}
+
+$total-horizontal-space: calculate-total-horizontal-space($grid-gap, $margin-default, $number-of-squares-per-row);
+
+// Mixins
+@mixin square-dimensions {
+  height: calc((100vw - #{$total-horizontal-space}) / $number-of-squares-per-row);
+  width: 100%;
+}
+
+@mixin grid-container-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 100vw;
+}
+
+@mixin grid-style($columns, $gap) {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat($columns, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  grid-gap: $gap;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+@mixin square-item-animation($name, $duration) {
+  animation: $name $duration ease-out forwards;
+  opacity: 0;
+}

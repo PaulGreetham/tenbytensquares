@@ -1,27 +1,22 @@
-$grid-gap: 1.25rem;  // Gap between squares
-$margin: 2rem;       // Margin of the grid container
-$number-of-squares-per-row: 10;
-
-// Total horizontal space taken by gaps and margins
-$total-horizontal-space: ($grid-gap * ($number-of-squares-per-row - 1)) + (2 * $margin);
+@import '../styles.lib';
 
 .square {
-  font-size: x-small;
-  border: 0.5px solid gray;
-  background-color: rgb(240, 240, 240);
-  padding: 0.25rem;
+  font-size: $font-size-small;
+  border: 0.5px solid $border-color;
+  background-color: $fourth-color;
+  padding: $padding-small;
   box-sizing: border-box;
-  height: calc((100vw - #{$total-horizontal-space}) / $number-of-squares-per-row);
-  width: 100%;
   overflow: auto;
+
+  @include square-dimensions;
 
   text-align: center;
   cursor: pointer;
-  transition: 0.5s;
+  transition: $standard-transition;
 
   &:hover {
     transform: scale(1.1);
-    transition: 0.5s;
+    transition: $standard-transition;
   }
 
   &::-webkit-scrollbar {
@@ -41,8 +36,8 @@ $total-horizontal-space: ($grid-gap * ($number-of-squares-per-row - 1)) + (2 * $
   }
 
   &.title {
-    font-size: small;
-    transition: 0.5s;
+    font-size: $font-size-small;
+    transition: $standard-transition;
   }
 
   &.user-id {
@@ -50,10 +45,10 @@ $total-horizontal-space: ($grid-gap * ($number-of-squares-per-row - 1)) + (2 * $
     justify-content: center;
     align-items: center;
 
-    font-size: x-large;
-    color: white;
-    background-color: rgb(60, 72, 107);
-    transition: 0.5s;
+    font-size: $font-size-large;
+    color: $neutral-color;
+    background-color: $first-color;
+    transition: $standard-transition;
   }
 
   &.id {
@@ -61,16 +56,16 @@ $total-horizontal-space: ($grid-gap * ($number-of-squares-per-row - 1)) + (2 * $
     justify-content: center;
     align-items: center;
 
-    font-size: x-large;
-    color: white;
-    background-color: rgb(249, 217, 73);
-    transition: 0.5s;
+    font-size: $font-size-large;
+    color: $neutral-color;
+    background-color: $second-color;
+    transition: $standard-transition;
   }
 
   &.body {
-    font-size: x-small;
-    color: white;
-    background-color: rgb(244, 80, 80);
-    transition: 0.5s;
+    font-size: $font-size-x-small;
+    color: $neutral-color;
+    background-color: $third-color;
+    transition: $standard-transition;
   }
 }
