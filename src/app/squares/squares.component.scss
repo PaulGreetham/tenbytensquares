@@ -1,17 +1,33 @@
 @import '../styles.lib';
 
 .square {
-  @include square-dimensions;
+  width: 100%;
   box-sizing: border-box;
-  padding: $padding-small;
-
+  overflow: auto;
+  padding: $padding-default;
   font-size: $font-size-x-small;
   text-align: center;
   color: $neutral-color;
-
-  overflow: auto;
+  background-color: $fourth-color;
   cursor: pointer;
   transition: $standard-transition;
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+  }
+
+  .square-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: $padding-small;
+  }
 
   &:hover {
     transform: scale(1.1);
@@ -37,23 +53,18 @@
     transition: $standard-transition;
   }
 
-  &.user-id {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: $second-color;
-    color: $dark-color;
+  &.user-id, &.id {
     font-size: $font-size-large;
     transition: $standard-transition;
   }
 
+  &.user-id {
+    background-color: $second-color;
+    color: $dark-color;
+  }
+
   &.id {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: $third-color;
-    font-size: $font-size-large;
-    transition: $standard-transition;
   }
 
   &.body {

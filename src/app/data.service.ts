@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 
 export interface Posts {
-  userId: number;
-  id: number;
+  userId: number | string;
+  id: number | string;
   title: string;
   body: string;
 }
