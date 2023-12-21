@@ -5,20 +5,24 @@ $number-of-squares-per-row: 10;
 // Total horizontal space taken by gaps and margins
 $total-horizontal-space: ($grid-gap * ($number-of-squares-per-row - 1)) + (2 * $padding);
 
-body {
-  background-image: linear-gradient(to bottom right, white, darkgrey);
+.grid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 100vw;
+  background-image: linear-gradient(to bottom right, white, gray);
 }
 
 .grid {
   display: grid;
-  width: 100vw;
+  width: 100%;
   grid-template-columns: repeat($number-of-squares-per-row, 1fr);
   grid-template-rows: repeat(10, 1fr);
   grid-gap: $grid-gap;
   box-sizing: border-box;
-  background-image: linear-gradient(to bottom right, white, darkgrey);
+  padding: 1rem;
 }
-
 
 @keyframes fadeInUp {
   from {

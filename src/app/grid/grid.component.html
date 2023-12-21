@@ -1,5 +1,7 @@
-<div class="grid">
-  <div *ngFor="let post of posts" class="square-item">
-    <app-square [post]="post"></app-square>
+<div class="grid-container">
+  <div class="grid">
+    <div *ngFor="let post of posts" class="square-item">
+      <app-square [post]="post"></app-square>
+    </div>
   </div>
 </div>
