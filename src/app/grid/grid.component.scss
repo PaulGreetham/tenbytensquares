@@ -1,5 +1,7 @@
+/* grid.component.scss */
 @import '../styles.lib';
 
+/* Keyframes for fadeInUp animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -11,20 +13,12 @@
   }
 }
 
+/* Styles for grid container */
 .grid-container {
   @include grid-container-style;
 }
 
+/* Styles for the grid itself */
 .grid {
   @include grid-style($number-of-squares-per-row, $grid-gap);
-}
-
-.square-item {
-  @include square-item-animation('fadeInUp', $standard-transition);
-
-  @for $i from 1 through 100 {
-    &:nth-child(#{$i}) {
-      animation-delay: 0.025s * $i;
-    }
-  }
 }

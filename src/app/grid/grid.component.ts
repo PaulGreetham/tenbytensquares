@@ -12,4 +12,8 @@ import { CommonModule } from '@angular/common';
 })
 export class GridComponent {
   @Input() posts: Posts[] = [];
+
+  getAnimationDelay(index: number): string {
+    return `${0.025 * index}s`;
+  }
 }
