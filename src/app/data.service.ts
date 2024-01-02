@@ -19,6 +19,7 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
+
   loadPosts() {
     this.http.get<Posts[]>(this.apiUrl).pipe(
       tap(posts => this.postsSubject.next(posts))
